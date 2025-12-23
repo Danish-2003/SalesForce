@@ -15,3 +15,5 @@ printHelloApexClass.sayHello();
 firstApexClass obj = new firstApexClass();
 firstApexClass.calculate();
 firstApexClass.DataTypesAndVariables();
+controlFlowStatements.ifElseStatements();
+loops.loops();

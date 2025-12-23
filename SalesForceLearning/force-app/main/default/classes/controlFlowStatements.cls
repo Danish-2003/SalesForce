@@ -10,5 +10,15 @@ public static void ifElseStatements(){
         }else{
             system.debug('false');
         }
+
+        // else if condition
+
+        if(x==y && a==b) {
+            system.debug('true');
+        }else if(x==y && a!=b){
+            system.debug('false');
+        }else{
+            system.debug('false');
+        }
 }
 }
