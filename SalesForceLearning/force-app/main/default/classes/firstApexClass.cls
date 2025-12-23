@@ -16,8 +16,8 @@ public with sharing class firstApexClass {
         System.debug('s value :'+s);
         System.debug('Acclist value :'+accountList);
 
-        Integer X;
-        Integer y;
+        Integer x = 5;
+        Integer y = 5;
         Integer a=1,b=1;
 
         if(x==y && a==b) {
@@ -26,10 +26,23 @@ public with sharing class firstApexClass {
             system.debug('false');
         }
     
+        y = ++x;
+        system.debug('y value after, y = ++x  :'+y);
+        
         //Ternary Operator
 
         Integer TernaryResult = x==y?2:3;
         System.debug('TernaryResult value :'+TernaryResult);
+
+        // EExpression operator
+
+        system.debug('result'+(x==y));
+        system.debug('result'+(x!=y));
+        system.debug('result'+(x>y));
+        system.debug('result'+(x>=y));
+        system.debug('result'+(x<y));
+        system.debug('result'+(x<=y));
+
         
     }
 
