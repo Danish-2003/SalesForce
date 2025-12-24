@@ -23,3 +23,9 @@ apexClasses.circle cir = new apexClasses.circle();
 cir.area();
 apexClasses.triangle tri = new apexClasses.triangle();
 tri.area();
+
+employePurchaseClass emp = new employePurchaseClass();
+emp.discount();
+
+customerPurchaseClass cust = new customerPurchaseClass();
+cust.discount();
