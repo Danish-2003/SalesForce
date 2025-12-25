@@ -40,7 +40,7 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 # Local environment variables
-.env
+salesForceVenv
 
 # Python Salesforce Functions
 **/__pycache__/

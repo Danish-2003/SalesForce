@@ -34,4 +34,14 @@ system.debug('Discount for customer : '+custAnswer);
 apexMethods.demoMethods();
 
 apexMethods obj = new apexMethods(10);
+
+sObjectClass.demoMethod();
+sObjectClass.customObj();
+sObjectClass.insertBulk();
+sObjectClass.updateAccount();
+List<student__c> s = [SELECT Id, Name, Age__c, Gender__c, Address__c FROM student__c];
+sObjectClass.print(s);
  
+dmlMethods.demoMethod();
+studentClass.randomStudentInsert(12);
+studentClass.getListSize();
