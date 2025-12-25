@@ -25,7 +25,13 @@ apexClasses.triangle tri = new apexClasses.triangle();
 tri.area();
 
 employePurchaseClass emp = new employePurchaseClass();
-emp.discount();
+double empAnswer = emp.discount();
+system.debug('Discount for Employee : '+empAnswer);
 
 customerPurchaseClass cust = new customerPurchaseClass();
-cust.discount();
+double custAnswer = cust.discount();
+system.debug('Discount for customer : '+custAnswer); 
+apexMethods.demoMethods();
+
+apexMethods obj = new apexMethods(10);
+ 
