@@ -45,3 +45,4 @@ sObjectClass.print(s);
 dmlMethods.demoMethod();
 studentClass.randomStudentInsert(12);
 studentClass.getListSize();
+dmlMethods.bestPracticeOfInsertion();
