@@ -94,4 +94,61 @@ public with sharing class studentClass {
 
 
     }
+    public static void updateStudent(){
+
+        student__c st = [SELECT Id, Name, Age__c, Gender__c, Address__c FROM student__c WHERE Name='Danish' LIMIT 1];
+        st.Name = 'Md Danish';
+        update st;        
+        system.debug(st);
+        
+    }
+
+    // public static void  updateContact(){
+    //     List<student__c> con =  [SELECT Id, Name FROM Danish Account WHERE Name='Danish'];
+    //     Id studentId = (con[0].Id);
+    //     Contact studentContact = new Contact(
+    //         firstName = 'Syeda Walisha',
+    //         lastName = 'Chishty',
+    //         Phone = '99392152',
+    //         AccountId = studentId
+    //     );
+    //     insert studentContact;
+    // }
+    public static void upsertStudent(){
+
+        student__c st = new student__c(
+            Name = 'Faisal',
+            Age__c = 21,
+            Gender__c = 'Male',
+            Address__c = 'UP'
+        );
+
+        student__c st1 = [SELECT Id, Name FROM student__c WHERE Name='Md Danish' LIMIT 1];
+
+        st1.address__c = 'Paharganj New Delhi';
+
+        List<student__c> stList = new List<student__c>();
+
+        stList.add(st);
+        stList.add(st1);
+
+        if(!stList.isEmpty()){
+
+            upsert stList;
+        }
+
+    }
+
+    public static void updateStudentUsingId(){
+        student__c st = new student__c();
+        // st.Name = 'Rehan';
+
+        insert st;
+
+        Id stid = st.id;
+        
+
+
+        system.debug('st id => '+stid);
+    }
 }

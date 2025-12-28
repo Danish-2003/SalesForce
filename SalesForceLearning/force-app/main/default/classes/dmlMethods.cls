@@ -36,4 +36,30 @@ public with sharing class dmlMethods {
             insert stList;
         }
     }
+
+    public static void anime(){
+        List<Account> animeList = new List<Account>();
+        Account acc = new Account();
+        acc.Name = 'Naruto';
+        animeList.add(acc);
+        if(! animeList.isEmpty()){
+            insert animeList;
+            animeContact(animeList[0].Id);
+        }
+        system.debug('Anime Account created successfully !!');
+    }
+    public static void animeContact(Id accId){
+
+        Contact con = new Contact(
+        firstName = 'Minato',
+        lastName = 'Uzumaki',
+        Phone = '99999',
+        AccountId = accId
+        );
+        insert con;
+        }
+    public static void update RelatedRecord(){
+        List<><
+    }    
+
 }

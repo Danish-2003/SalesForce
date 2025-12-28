@@ -35,6 +35,8 @@ apexMethods.demoMethods();
 
 apexMethods obj = new apexMethods(10);
 
+genericObjectAccount.updateAccount();
+
 sObjectClass.demoMethod();
 sObjectClass.customObj();
 sObjectClass.insertBulk();
@@ -46,3 +48,6 @@ dmlMethods.demoMethod();
 studentClass.randomStudentInsert(12);
 studentClass.getListSize();
 dmlMethods.bestPracticeOfInsertion();
+dmlMethods.anime();
+studentClass.upsertStudent();
+studentClass.updateStudentUsingId();
