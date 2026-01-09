@@ -1,22 +1,27 @@
-trigger accountTrigger on Account (before insert) {
-
+trigger accountTrigger on Account (before insert,after insert, before update) {
 
 
     system.debug('Trigger called '+Trigger.new);
 
-    for(Account acc  : Trigger.new){
-        system.debug('Industry is'+ acc.Industry);
-        system.debug('is Available '+ acc.isAvailable__c);
+    if(Trigger.isInsert){
+        if(Trigger.isBefore){
 
-        if(acc.Industry != NULL && acc.isAvailable__c== true){
-            acc.AccountNumber = '1234567890';   
+            accountTriggerHandler.updateAccountNumberField(Trigger.new);
+
+        }else if (Trigger.isAfter){
+
+            accountTriggerHandler.createRelatedContact(Trigger.new);
         }
-        system.debug('Account Number is '+ acc.AccountNumber);
-
     }
 
-    
+    if(Trigger.isUpdate){
+        if(Trigger.isBefore){
 
+            accountTriggerHandler.updateAccNum(Trigger.oldMap,Trigger.new); 
+            
+        }else if (Trigger.isAfter){
 
-
+            accountTriggerHandler.updateRelatedContactPhone(Trigger.oldMap,Trigger.new);
+        }
+    }
 }
